@@ -36,7 +36,8 @@ To ensure passwords are not stored in plaintext, a hash() function was created. 
 The signup() function prompts for a username and checks if it already exists in users.txt using grep. If the user is unique, it prompts for a password, confirms it, and appends the salt and hash to the user file.
 
 Screenshot:
-<img width="1080" height="765" alt="1" src="https://github.com/user-attachments/assets/8c5d5538-a59c-4aca-9dca-b79d0e5eb938" />
+<img width="1081" height="765" alt="0" src="https://github.com/user-attachments/assets/36957dc1-77c5-4375-96c7-cf45b61b5802" />
+
 
 
 <img width="1082" height="767" alt="2" src="https://github.com/user-attachments/assets/fd650975-e8a7-4dc8-8bb2-832aca09e646" />
@@ -87,7 +88,7 @@ Screenshot:
 
 - **Salted Hashing:** By using openssl rand, every user gets a unique salt. Even if two users have the same password, their hashes in users.txt will look different.
 - **Input Masking:** The read -s flag was used to ensure passwords are not displayed on the screen while the user types.
-- **Validation:** The script uses grep -q to silently check for existing users, allowing for a cleaner UI experience during errors.
+- **Validation:** The script uses grep -q to silently check for existing users, allowing for a cleaner UI experience during errors and redirect all messages to /dev/null after the check.
 
 **Defensive Analysis**
 
