@@ -34,14 +34,18 @@ To ensure passwords are not stored in plaintext, a hash() function was created. 
 
 **Step 3:** Creating the Signup Function
 The signup() function prompts for a username and checks if it already exists in users.txt using grep. If the user is unique, it prompts for a password, confirms it, and appends the salt and hash to the user file.
+
 Screenshot:
 <img width="1080" height="765" alt="1" src="https://github.com/user-attachments/assets/8c5d5538-a59c-4aca-9dca-b79d0e5eb938" />
+
+
 <img width="1082" height="767" alt="2" src="https://github.com/user-attachments/assets/fd650975-e8a7-4dc8-8bb2-832aca09e646" />
 
 #
 
 **Step 4:** Creating the Signin Function
 The signin() function handles user authentication. It retrieves the stored salt and hash for a given username, hashes the newly entered password with the stored salt, and compares the results to grant or deny access.
+
 Screenshot:
 <img width="1077" height="768" alt="3" src="https://github.com/user-attachments/assets/af75143c-c062-4462-a851-742b738aa729" />
 
@@ -49,6 +53,7 @@ Screenshot:
 
 **Step 5:** Implementing the Main Menu
 A select loop and case statement were implemented to provide a user-friendly interface for choosing between Sign Up, Sign In, or Exit.
+
 Screenshot:
 <img width="1081" height="765" alt="4" src="https://github.com/user-attachments/assets/ce7d2e42-e7ef-4e67-8ee2-a324e41c0e89" />
 
@@ -56,6 +61,7 @@ Screenshot:
 
 **Step 6:** Running and Testing the Script
 The script was executed to verify the workflow. A user "Rashad" was created, and a successful login was performed.
+
 Screenshot:
 <img width="1080" height="768" alt="5" src="https://github.com/user-attachments/assets/03c34883-52d9-4d1d-964d-69cee1eab7b2" />
 
@@ -63,6 +69,7 @@ Screenshot:
 
 **Step 7:** Testing Error Handling and Security Logic
 To ensure robustness, the script was tested against duplicate usernames and incorrect credentials. The system correctly identified that the user "Rashad" already existed and denied a login attempt for a non-existent or incorrect user ("Adam").
+
 Screenshot:
 <img width="1082" height="765" alt="7" src="https://github.com/user-attachments/assets/c254a491-28be-4271-a4dc-694954b7372e" />
 
@@ -70,15 +77,17 @@ Screenshot:
 
 **Step 8:** Verifying Data Storage
 After execution, the contents of users.txt and log.txt were inspected to confirm that passwords were encrypted and all attempts were logged with timestamps.
+
 Screenshot:
 <img width="1082" height="767" alt="6" src="https://github.com/user-attachments/assets/cb008b3a-1542-48ae-a859-779f883f5429" />
+##
 
 
 **Important Notes from the Lab**
 
-**Salted Hashing:** By using openssl rand, every user gets a unique salt. Even if two users have the same password, their hashes in users.txt will look different.
-**Input Masking:** The read -s flag was used to ensure passwords are not displayed on the screen while the user types.
-**Validation:** The script uses grep -q to silently check for existing users, allowing for a cleaner UI experience during errors.
+- **Salted Hashing:** By using openssl rand, every user gets a unique salt. Even if two users have the same password, their hashes in users.txt will look different.
+- **Input Masking:** The read -s flag was used to ensure passwords are not displayed on the screen while the user types.
+- **Validation:** The script uses grep -q to silently check for existing users, allowing for a cleaner UI experience during errors.
 
 **Defensive Analysis**
 
