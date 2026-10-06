@@ -1,4 +1,4 @@
-## Bash Authentication System Lab
+## Bash Scripting: Authentication System Lab
 
 **Date: April 26, 2026**
 
